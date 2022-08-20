@@ -1,0 +1,18 @@
+{% csrf_token %}
+<H1>{{TRY_AGAIN}}</H1>
+<div>MAX TURN = {{ MAX_TURN }}</div>
+<div>CURRNT TURN = {{ CURRENT_TURN }}</div>
+<div>WHOWIN = {{WHOWIN}}</div>
+{% for array in BOARD %}
+<div>
+    {% for content in array %}
+    {% if content == '' %}
+    []
+    {% else %}
+    [{{content}}]
+    {% endif %}
+    {% endfor %}
+</div>
+{% endfor %}
+
+<a href="/newgame">NEW-GAME</a>
